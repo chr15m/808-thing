@@ -1,0 +1,15 @@
+[submodule "rc-patches"]
+	path = rc-patches
+	url = https://github.com/danomatika/rc-patches.git
+[submodule "pd-net-sync"]
+	path = pd-net-sync
+	url = https://github.com/chr15m/pd-net-sync.git
+[submodule "blockhead"]
+	path = blockhead
+	url = https://github.com/chr15m/blockhead.git
+[submodule "rjlib"]
+	path = rjlib
+	url = https://github.com/chr15m/rjlib
+[submodule "pd-midi-guis"]
+	path = pd-midi-guis
+	url = https://github.com/chr15m/pd-midi-guis.git

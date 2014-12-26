@@ -1,0 +1,71 @@
+#N canvas 557 123 450 300 10;
+#X declare -path ./rc-patches/rc/;
+#X declare -path ./rjlib/rj/;
+#X declare -path ./blockhead/;
+#X obj 14 270 core 808;
+#N canvas 1264 120 514 300 beat-probabilities 0;
+#N canvas 568 245 450 300 (subpatch) 0;
+#X array bd-loop 16 float 2;
+#X coords 0 1 15 -1 50 25 1 0 0;
+#X restore 453 22 graph;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array sd-loop 16 float 2;
+#X coords 0 1 15 -1 50 25 1 0 0;
+#X restore 453 65 graph;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array hh-loop 16 float 2;
+#X coords 0 1 15 -1 50 25 1 0 0;
+#X restore 453 108 graph;
+#N canvas 2 50 450 300 init 0;
+#X obj 9 31 t b b;
+#X msg 9 148 \; bd-prob 0 1 0.1 0.9 0.1 0.05 0.1 0.01 0.1 0.8 0.1 0.7
+0.1 0.05 0.01 0.01 0.2 \; sd-prob 0 0 0.05 0.05 0.05 0.95 0 0 0.2 0
+0.05 0 0 0.95 0 0 0.1 \; hh-prob 0 0.95 0.05 0.95 0.05 0.95 0.1 0.95
+0.1 0.95 0.05 0.95 0.05 0.95 0.05 0.95 0.05 \; bd-makeloop bang \;
+sd-makeloop bang \; hh-makeloop bang \; multiplier 2 \;;
+#X msg 69 114 \; loop-length \$1 \;;
+#X msg 36 53 16;
+#X obj 9 7 loadbang;
+#X connect 0 0 1 0;
+#X connect 0 1 3 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;
+#X restore 11 20 pd init probabilities;
+#X obj 191 229 r SEED;
+#X obj 101 229 r SEED;
+#X obj 10 230 r SEED;
+#X obj 10 253 makeloop bd;
+#X obj 191 250 makeloop hh;
+#X obj 101 251 makeloop sd;
+#N canvas 568 245 450 300 (subpatch) 0;
+#X array bd-prob 16 float 3;
+#A 0 1 0.1 0.9 0.1 0.05 0.1 0.01 0.1 0.8 0.1 0.7 0.1 0.05 0.01 0.01
+0.2;
+#X coords 0 1 15 -1 50 25 1;
+#X restore 393 22 graph;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array sd-prob 16 float 3;
+#A 0 0 0.05 0.05 0.05 0.95 0 0 0.2 0 0.05 0 0 0.95 0 0 0.1;
+#X coords 0 1 15 -1 50 25 1;
+#X restore 393 65 graph;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array hh-prob 16 float 3;
+#A 0 0.95 0.05 0.95 0.05 0.95 0.1 0.95 0.1 0.95 0.05 0.95 0.05 0.95
+0.05 0.95 0.05;
+#X coords 0 1 15 -1 50 25 1;
+#X restore 393 108 graph;
+#X connect 4 0 8 0;
+#X connect 5 0 9 0;
+#X connect 6 0 7 0;
+#X restore 302 265 pd beat-probabilities;
+#X obj 14 207 readloop 808 bd;
+#X obj 14 248 readloop 808 hh;
+#X obj 14 227 readloop 808 sd;
+#X msg 13 33 \; bd-makeloop bang \; sd-makeloop bang \; hh-makeloop
+bang \; bd-randomize bang \; sd-randomize bang \; hh-randomize bang
+\;;
+#X obj 15 158 randomize sd snappy tone tune;
+#X obj 14 138 randomize bd tone decay;
+#X obj 15 180 randomize hh decay tune;
+#X obj 13 9 r 808/fresh;
+#X connect 9 0 5 0;

@@ -1,0 +1,148 @@
+#N canvas 175 200 450 302 10;
+#X declare -path ./pd-net-sync/;
+#X declare -path ./rc-patches/rc/;
+#X declare -path ./rjlib/rj/;
+#X text 314 -8 key;
+#X obj 296 6 taplist 64 28 note-1-set note-1 C C# D D# E F F# G G#
+A A# B;
+#X obj 296 36 taplist 64 28 note-2-set note-2 C C# D D# E F F# G G#
+A A# B;
+#X obj 296 67 taplist 64 28 note-3-set note-3 C C# D D# E F F# G G#
+A A# B;
+#X obj 296 98 taplist 64 28 note-4-set note-4 C C# D D# E F F# G G#
+A A# B;
+#X obj 369 6 numberbox 64 32 timer-1/bpm_r timer-1/bpm 30 320 140;
+#X obj 10 159 tgl 24 0 0/\$0/slide 0/acid/slide/r empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 36 159 tgl 24 0 1/\$0/slide 1/acid/slide/r empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 62 159 tgl 24 0 2/\$0/slide 2/acid/slide/r empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 88 159 tgl 24 0 3/\$0/slide 3/acid/slide/r empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 120 159 tgl 24 0 4/\$0/slide 4/acid/slide/r empty 17 7 0 10
+-262144 -1 -1 1 1;
+#X obj 146 159 tgl 24 0 5/\$0/slide 5/acid/slide/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 172 159 tgl 24 0 6/\$0/slide 6/acid/slide/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 198 159 tgl 24 0 7/\$0/slide 7/acid/slide/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 230 159 tgl 24 0 8/\$0/slide 8/acid/slide/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 256 159 tgl 24 0 9/\$0/slide 9/acid/slide/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 282 159 tgl 24 0 10/\$0/slide 10/acid/slide/r empty 17 7 0 10
+-262144 -1 -1 1 1;
+#X obj 308 159 tgl 24 0 11/\$0/slide 11/acid/slide/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 339 159 tgl 24 0 12/\$0/slide 12/acid/slide/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 365 159 tgl 24 0 13/\$0/slide 13/acid/slide/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 391 159 tgl 24 0 14/\$0/slide 14/acid/slide/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 417 159 tgl 24 0 15/\$0/slide 15/acid/slide/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 10 189 tgl 24 0 0/\$0/accent 0/acid/accent/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 36 189 tgl 24 0 1/\$0/accent 1/acid/accent/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 62 189 tgl 24 0 2/\$0/accent 2/acid/accent/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 88 189 tgl 24 0 3/\$0/accent 3/acid/accent/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 120 189 tgl 24 0 4/\$0/accent 4/acid/accent/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 146 189 tgl 24 0 5/\$0/accent 5/acid/accent/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 172 189 tgl 24 0 6/\$0/accent 6/acid/accent/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 198 189 tgl 24 0 7/\$0/accent 7/acid/accent/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 230 189 tgl 24 0 8/\$0/accent 8/acid/accent/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 256 189 tgl 24 0 9/\$0/accent 9/acid/accent/r empty 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 282 189 tgl 24 0 10/\$0/accent 10/acid/accent/r empty 17 7 0
+10 -262144 -1 -1 0 1;
+#X obj 308 189 tgl 24 0 11/\$0/accent 11/acid/accent/r empty 17 7 0
+10 -262144 -1 -1 0 1;
+#X obj 339 189 tgl 24 0 12/\$0/accent 12/acid/accent/r empty 17 7 0
+10 -262144 -1 -1 0 1;
+#X obj 365 189 tgl 24 0 13/\$0/accent 13/acid/accent/r empty 17 7 0
+10 -262144 -1 -1 0 1;
+#X obj 391 189 tgl 24 0 14/\$0/accent 14/acid/accent/r empty 17 7 0
+10 -262144 -1 -1 0 1;
+#X obj 417 189 tgl 24 0 15/\$0/accent 15/acid/accent/r empty 17 7 0
+10 -262144 -1 -1 0 1;
+#X obj 230 250 taplist 24 24 8/acid/sequence/r 8/\$0/sequence -- 1
+2 3 4;
+#X obj 120 220 taplist 24 24 4/acid/octave/r 4/\$0/octave lo -- hi
+;
+#X obj 88 220 taplist 24 24 3/acid/octave/r 3/\$0/octave lo -- hi;
+#X obj 10 220 taplist 24 24 0/acid/octave/r 0/\$0/octave lo -- hi;
+#X obj 36 220 taplist 24 24 1/acid/octave/r 1/\$0/octave lo -- hi;
+#X obj 62 220 taplist 24 24 2/acid/octave/r 2/\$0/octave lo -- hi;
+#X obj 146 220 taplist 24 24 5/acid/octave/r 5/\$0/octave lo -- hi
+;
+#X obj 172 220 taplist 24 24 6/acid/octave/r 6/\$0/octave lo -- hi
+;
+#X obj 198 220 taplist 24 24 7/acid/octave/r 7/\$0/octave lo -- hi
+;
+#X obj 230 220 taplist 24 24 8/acid/octave/r 8/\$0/octave lo -- hi
+;
+#X obj 256 220 taplist 24 24 9/acid/octave/r 9/\$0/octave lo -- hi
+;
+#X obj 282 220 taplist 24 24 10/acid/octave/r 10/\$0/octave lo -- hi
+;
+#X obj 308 220 taplist 24 24 11/acid/octave/r 11/\$0/octave lo -- hi
+;
+#X obj 340 220 taplist 24 24 12/acid/octave/r 12/\$0/octave lo -- hi
+;
+#X obj 366 220 taplist 24 24 13/acid/octave/r 13/\$0/octave lo -- hi
+;
+#X obj 392 220 taplist 24 24 14/acid/octave/r 14/\$0/octave lo -- hi
+;
+#X obj 418 220 taplist 24 24 15/acid/octave/r 15/\$0/octave lo -- hi
+;
+#X obj 10 250 taplist 24 24 0/acid/sequence/r 0/\$0/sequence -- 1 2
+3 4;
+#X obj 36 250 taplist 24 24 1/acid/sequence/r 1/\$0/sequence -- 1 2
+3 4;
+#X obj 62 250 taplist 24 24 2/acid/sequence/r 2/\$0/sequence -- 1 2
+3 4;
+#X obj 88 250 taplist 24 24 3/acid/sequence/r 3/\$0/sequence -- 1 2
+3 4;
+#X obj 120 250 taplist 24 24 4/acid/sequence/r 4/\$0/sequence -- 1
+2 3 4;
+#X obj 146 250 taplist 24 24 5/acid/sequence/r 5/\$0/sequence -- 1
+2 3 4;
+#X obj 172 250 taplist 24 24 6/acid/sequence/r 6/\$0/sequence -- 1
+2 3 4;
+#X obj 198 250 taplist 24 24 7/acid/sequence/r 7/\$0/sequence -- 1
+2 3 4;
+#X obj 256 250 taplist 24 24 9/acid/sequence/r 9/\$0/sequence -- 1
+2 3 4;
+#X obj 282 250 taplist 24 24 10/acid/sequence/r 10/\$0/sequence --
+1 2 3 4;
+#X obj 308 250 taplist 24 24 11/acid/sequence/r 11/\$0/sequence --
+1 2 3 4;
+#X obj 340 250 taplist 24 24 12/acid/sequence/r 12/\$0/sequence --
+1 2 3 4;
+#X obj 366 250 taplist 24 24 13/acid/sequence/r 13/\$0/sequence --
+1 2 3 4;
+#X obj 392 250 taplist 24 24 14/acid/sequence/r 14/\$0/sequence --
+1 2 3 4;
+#X obj 418 250 taplist 24 24 15/acid/sequence/r 15/\$0/sequence --
+1 2 3 4;
+#X obj 397 103 tgl 32 0 \$0/swing acid/swing/r swing 0 40 0 10 -262144
+-1 -1 0 0.66;
+#X obj 369 45 taplist 64 32 acid/pace/r \$0/pace 1 2 3 4;
+#X obj 230 280 cnv 8 24 16 empty ticker empty 20 12 0 14 -258113 -66577
+0;
+#X obj 378 279 core 808;
+#X obj 10 14 vsl 32 128 0 1 0 0 808/bd/decay 808/bd/decay/r decay 0
+-9 0 10 -262144 -1 -1 0 1;
+#X obj 50 14 vsl 32 128 0 1 0 0 808/bd/tone 808/bd/tone/r tone 0 -9
+0 10 -262144 -1 -1 0 1;
