@@ -1,4 +1,4 @@
-#N canvas 732 227 450 300 10;
+#N canvas 731 221 450 300 10;
 #X declare -path ./rc-patches/rc/;
 #X declare -path ./rjlib/rj/;
 #X declare -path ./blockhead/;
@@ -24,7 +24,7 @@
 #X connect 8 0 1 0;
 #X connect 9 0 2 0;
 #X restore 11 129 pd snare;
-#N canvas 242 83 581 441 bassdrum 0;
+#N canvas 241 77 581 441 bassdrum 0;
 #X text 89 345 output lvl = vel/127 * amp;
 #X obj 49 344 *~ 1;
 #X obj 49 366 throw~ \$1/bd;
@@ -59,7 +59,7 @@
 #X connect 13 0 15 0;
 #X connect 15 0 14 0;
 #X restore 11 106 pd bassdrum;
-#N canvas 70 123 450 300 hat 1;
+#N canvas 70 123 450 300 hat 0;
 #X obj 14 230 *~ 1;
 #X obj 14 208 s_808hihat \$0/808hihat;
 #X obj 14 174 r \$1/hh/trigger;
@@ -76,21 +76,7 @@
 #X connect 6 0 5 0;
 #X connect 7 0 4 0;
 #X restore 11 152 pd hat;
-#N canvas 2 48 450 300 cowbell 0;
+#N canvas 2 50 450 300 cowbell 0;
 #X restore 11 175 pd cowbell;
 #X obj 11 35 declare -path ./rjlib/rj/;
-#N canvas 718 125 450 300 mixer 0;
-#X obj 8 14 catch~ \$1/bd;
-#X obj 184 14 catch~ \$1/hh;
-#X obj 97 14 catch~ \$1/sd;
-#X obj 272 14 catch~ \$1/cb;
-#X obj 361 14 catch~ \$1/cl;
-#X obj 215 222 dac~;
-#X obj 215 191 +~;
-#X connect 0 0 6 0;
-#X connect 1 0 6 0;
-#X connect 2 0 6 0;
-#X connect 6 0 5 0;
-#X connect 6 0 5 1;
-#X restore 381 56 pd mixer;
 #X obj 11 59 declare -path ./blockhead/;
