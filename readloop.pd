@@ -1,9 +1,9 @@
-#N canvas 217 604 450 300 10;
+#N canvas 216 598 450 300 10;
 #X obj 14 37 mod 16;
 #X obj 14 82 sel 1;
 #X obj 14 59 tabread \$2-loop;
 #X obj 14 105 s \$1/\$2/trigger;
-#X obj 14 14 r \$1/tick;
+#X obj 14 14 r \$1/\$2/tick;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
